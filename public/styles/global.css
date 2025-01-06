@@ -1,0 +1,399 @@
+@import "./theme.css";
+
+:root {
+
+    --bg-dark-1: hsl(215, 20%, 5%);
+    --bg-dark-2: hsl(215, 20%, 10%);
+    --bg-dark-3: hsl(215, 20%, 15%);
+    --bg-dark-4: hsl(215, 20%, 20%);
+    --bg-dark-5: hsl(215, 20%, 25%);
+    --bg-light-1: hsl(215, 30%, 95%);
+    --bg-light-2: hsl(215, 20%, 90%);
+    --bg-light-3: hsl(215, 15%, 85%);
+    --bg-light-4: hsl(215, 10%, 75%);
+    --bg-light-5: hsl(215, 5%, 65%);
+
+
+    /* Red Palette */
+    --red-light-1: hsl(0, 100%, 97%);
+    --red-light-2: hsl(0, 100%, 93%);
+    --red-light-3: hsl(0, 96%, 85%);
+    --red-light-4: hsl(0, 91%, 74%);
+    --red-light-5: hsl(0, 87%, 65%);
+    --red-dark-1: hsl(0, 50%, 23%);
+    --red-dark-2: hsl(0, 55%, 26%);
+    --red-dark-3: hsl(0, 59%, 31%);
+    --red-dark-4: hsl(0, 65%, 38%);
+    --red-dark-5: hsl(0, 76%, 47%);
+
+    /* Green Palette */
+    --green-light-1: hsl(154, 80%, 94%);
+    --green-light-2: hsl(154, 72%, 85%);
+    --green-light-3: hsl(154, 67%, 74%);
+    --green-light-4: hsl(154, 65%, 62%);
+    --green-light-5: hsl(154, 60%, 53%);
+    --green-dark-1: hsl(154, 33%, 19%);
+    --green-dark-2: hsl(154, 36%, 22%);
+    --green-dark-3: hsl(154, 40%, 28%);
+    --green-dark-4: hsl(154, 47%, 35%);
+    --green-dark-5: hsl(154, 60%, 53%);
+
+    /* Blue Palette */
+    --blue-light-1: hsl(212, 100%, 97%);
+    --blue-light-2: hsl(212, 95%, 93%);
+    --blue-light-3: hsl(212, 90%, 85%);
+    --blue-light-4: hsl(212, 85%, 75%);
+    --blue-light-5: hsl(212, 80%, 65%);
+    --blue-dark-1: hsl(212, 50%, 23%);
+    --blue-dark-2: hsl(212, 55%, 28%);
+    --blue-dark-3: hsl(212, 60%, 34%);
+    --blue-dark-4: hsl(212, 67%, 42%);
+    --blue-dark-5: hsl(212, 75%, 53%);
+
+    /* Yellow Palette */
+    --yellow-light-1: hsl(50, 96%, 96%);
+    --yellow-light-2: hsl(50, 95%, 90%);
+    --yellow-light-3: hsl(50, 93%, 80%);
+    --yellow-light-4: hsl(50, 91%, 70%);
+    --yellow-light-5: hsl(50, 89%, 61%);
+    --yellow-dark-1: hsl(25, 47%, 20%);
+    --yellow-dark-2: hsl(30, 55%, 25%);
+    --yellow-dark-3: hsl(35, 63%, 29%);
+    --yellow-dark-4: hsl(40, 71%, 36%);
+    --yellow-dark-5: hsl(45, 83%, 47%);
+
+    /* Gray Palette */
+    --gray-light-1: hsl(220, 14%, 96%);
+    --gray-light-2: hsl(220, 13%, 93%);
+    --gray-light-3: hsl(220, 11%, 85%);
+    --gray-light-4: hsl(220, 9%, 74%);
+    --gray-light-5: hsl(220, 8%, 62%);
+    --gray-dark-1: hsl(220, 24%, 9%);
+    --gray-dark-2: hsl(220, 20%, 15%);
+    --gray-dark-3: hsl(220, 15%, 25%);
+    --gray-dark-4: hsl(220, 10%, 36%);
+    --gray-dark-5: hsl(220, 10%, 46%);
+}
+
+.h-controllers {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+    box-sizing: border-box;
+    transition: color 250ms, background-color 250ms;
+}
+
+img {
+    height: 100%;
+}
+
+picture {
+    width: fit-content;
+}
+
+a {
+    text-align: center;
+    text-decoration: none;
+    color: var(--text-1);
+}
+
+button {
+    cursor: pointer;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    display: grid;
+    grid-template-areas: "h" "m" "f";
+    grid-template-rows: 70px 1fr 170px;
+    background-color: var(--bg-1);
+    min-height: 100vh;
+}
+
+header {
+    grid-area: h;
+    background-color: var(--bg-2);
+    color: var(--text-1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 1em;
+
+}
+
+main {
+    grid-area: m;
+    color: var(--text-2);
+    padding: 8px;
+}
+
+footer {
+    grid-area: f;
+    background-color: var(--bg-2);
+    color: var(--text-1);
+    padding: 0.5em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    div {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 80%;
+
+        p,
+        li {
+            margin-left: 0.5rem;
+        }
+    }
+}
+
+.text-center {
+    text-align: center;
+}
+
+.btn {
+    padding: 0.5em;
+    border-radius: 8px;
+    background: none;
+
+    border: 4px solid transparent;
+    font-weight: 700;
+    color: var(--text-1);
+    transition: border-color 250ms, background-color 250ms, color 250ms;
+
+    &:hover {
+        border: 4px solid rgba(255, 255, 255, 0.15);
+    }
+
+    &.profilebtn {
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+    }
+
+    &.red {
+        background-color: var(--red-4);
+
+        &:hover {
+            background-color: var(--red-5);
+        }
+    }
+
+    &.green {
+        background-color: var(--green-4);
+
+        &:hover {
+            background-color: var(--green-5);
+        }
+    }
+
+    &.blue {
+        background-color: var(--blue-4);
+
+        &:hover {
+            background-color: var(--blue-5);
+        }
+    }
+
+    &.yellow {
+        background-color: var(--yellow-4);
+
+        &:hover {
+            background-color: var(--yellow-5);
+        }
+    }
+
+}
+
+.bs {
+    box-shadow: rgba(0, 0, 0, 0.3) 2px 2px 3px;
+}
+
+.box {
+    padding: 1em;
+    background-color: var(--bg-2);
+    border-radius: 8px;
+    border: 3px solid var(--bg-3);
+    transition: border-color 250ms, background-color 250ms, color 250ms;
+
+    &:hover {
+        border-color: var(--bg-4);
+    }
+}
+
+.form-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    .btn {
+        width: 100%;
+        height: 44px;
+    }
+}
+
+
+textarea {
+    resize: none;
+    background-color: var(--bg-3);
+    color: var(--text-2);
+    padding: 1em;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    width: 100%;
+    height: 200px;
+}
+
+.input-text-container {
+    position: relative;
+    background-color: var(--bg-3);
+    height: 2em;
+    border-radius: 8px;
+
+    input {
+        height: 100%;
+        width: 100%;
+        padding-left: 5px;
+        background: none;
+        outline: none;
+        border: none;
+        border-radius: 8px;
+        color: var(--text-2);
+    }
+
+    input~label {
+        position: absolute;
+        color: var(--text-3);
+        cursor: text;
+        left: 5px;
+        top: 50%;
+        translate: 0 -50%;
+        transition: translate 150ms, scale 150ms;
+    }
+
+    input:focus~label,
+    input:not(:placeholder-shown)~label {
+        cursor: default;
+        scale: 0.8;
+        translate: -10% -150%;
+    }
+}
+
+.input-file-container {
+    display: flex;
+    align-items: center;
+    background-color: var(--bg-3);
+    gap: 16px;
+    padding: 0.5em;
+    height: 2em;
+    border-radius: 8px;
+
+    input~label {
+        border-radius: 8px;
+        border: 3px transparent solid;
+        background-color: var(--bg-3);
+        color: var(--text-3);
+
+        &:hover {
+            border-color: var(--bg-5);
+            background-color: var(--bg-4);
+        }
+    }
+}
+
+.error {
+    background-color: var(--red-1);
+    color: var(--red-5);
+}
+
+.input-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: end;
+
+    background-color: var(--bg-3);
+    border-radius: 8px;
+    height: 2em;
+    padding-inline: 0.5em;
+    width: fit-content;
+}
+
+.posts-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.post {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    width: 600px;
+    max-width: 80vw;
+    height: 250px;
+}
+
+.post-profile {
+    height: 64px;
+    width: 64px;
+}
+
+.post-content {
+    flex: 2;
+    width: 100%;
+    height: 100%;
+}
+
+.review {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    width: fit-content;
+    border-radius: 16px;
+    background-color: var(--bg-3);
+
+    button {
+        width: 44px;
+        height: 44px;
+    }
+}
+
+
+@media (min-width: 640px) {
+
+    footer {
+        flex-direction: row;
+        padding: 1em;
+
+        div {
+            padding: 1em;
+
+            li,
+            p {
+                text-align: left;
+            }
+        }
+    }
+}

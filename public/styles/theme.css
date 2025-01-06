@@ -1,0 +1,106 @@
+html:not(.dark) {
+    --bg-1: var(--bg-light-1);
+    --bg-2: var(--bg-light-2);
+    --bg-3: var(--bg-light-3);
+    --bg-4: var(--bg-light-4);
+    --bg-5: var(--bg-light-5);
+
+    --text-1: var(--gray-dark-1);
+    --text-2: var(--gray-dark-2);
+    --text-3: var(--gray-dark-3);
+    --text-4: var(--gray-dark-4);
+    --text-5: var(--gray-dark-5);
+
+    --red-1: var(--red-light-1);
+    --red-2: var(--red-light-2);
+    --red-3: var(--red-light-3);
+    --red-4: var(--red-light-4);
+    --red-5: var(--red-light-5);
+
+    --green-1: var(--green-light-1);
+    --green-2: var(--green-light-2);
+    --green-3: var(--green-light-3);
+    --green-4: var(--green-light-4);
+    --green-5: var(--green-light-5);
+
+    --blue-1: var(--blue-light-1);
+    --blue-2: var(--blue-light-2);
+    --blue-3: var(--blue-light-3);
+    --blue-4: var(--blue-light-4);
+    --blue-5: var(--blue-light-5);
+
+    --yellow-1: var(--yellow-light-1);
+    --yellow-2: var(--yellow-light-2);
+    --yellow-3: var(--yellow-light-3);
+    --yellow-4: var(--yellow-light-4);
+    --yellow-5: var(--yellow-light-5);
+}
+
+html.dark {
+    --bg-1: var(--bg-dark-1);
+    --bg-2: var(--bg-dark-2);
+    --bg-3: var(--bg-dark-3);
+    --bg-4: var(--bg-dark-4);
+    --bg-5: var(--bg-dark-5);
+
+    --text-1: var(--gray-light-1);
+    --text-2: var(--gray-light-2);
+    --text-3: var(--gray-light-3);
+    --text-4: var(--gray-light-4);
+    --text-5: var(--gray-light-5);
+
+    --red-1: var(--red-dark-1);
+    --red-2: var(--red-dark-2);
+    --red-3: var(--red-dark-3);
+    --red-4: var(--red-dark-4);
+    --red-5: var(--red-dark-5);
+
+    --green-1: var(--green-dark-1);
+    --green-2: var(--green-dark-2);
+    --green-3: var(--green-dark-3);
+    --green-4: var(--green-dark-4);
+    --green-5: var(--green-dark-5);
+
+    --blue-1: var(--blue-dark-1);
+    --blue-2: var(--blue-dark-2);
+    --blue-3: var(--blue-dark-3);
+    --blue-4: var(--blue-dark-4);
+    --blue-5: var(--blue-dark-5);
+
+    --yellow-1: var(--yellow-dark-1);
+    --yellow-2: var(--yellow-dark-2);
+    --yellow-3: var(--yellow-dark-3);
+    --yellow-4: var(--yellow-dark-4);
+    --yellow-5: var(--yellow-dark-5);
+}
+
+#theme {
+    position: relative;
+    border: none;
+    height: 44px;
+    width: 44px;
+    background-color: yellow;
+    border-radius: 50%;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 10%;
+        right: -5px;
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+        background-color: var(--bg-2);
+        transform-origin: right;
+        scale: 0;
+        transition: scale 250ms, background-color 250ms;
+    }
+
+    html.dark & {
+        background-color: white;
+
+        &::before {
+            scale: 1;
+        }
+    }
+}

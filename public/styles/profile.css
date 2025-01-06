@@ -1,0 +1,90 @@
+@import "./global.css";
+
+
+.profile {
+    display: grid;
+    grid-template-areas: "d" "n" "p";
+    grid-template-rows: 250px 44px 1fr;
+    gap: 8px;
+}
+
+nav {
+    grid-area: n;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: 2em;
+}
+
+.filters {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    a {
+        border-radius: 8px;
+        padding: 4px 8px 4px 8px;
+        background-color: rgba(255, 255, 255, 0.05);
+
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+    }
+}
+
+.posts {
+    grid-area: p;
+}
+
+.details {
+    grid-area: d;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+
+.infos {
+    width: 100%;
+}
+
+.image-container {
+    height: 128px;
+    width: 128px;
+
+    picture,
+    img {
+        height: 100%;
+    }
+}
+
+.edit {
+    display: flex;
+    justify-content: end;
+    margin-top: auto;
+    width: 100%;
+}
+
+.profile-contents {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    width: 100%;
+}
+
+@media (min-width: 640px) {
+    .profile {
+        grid-template-areas: "d n" "d p";
+        grid-template-rows: 44px 1fr;
+        grid-template-columns: 300px 1fr;
+    }
+
+    .profile-contents {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .edit {
+        justify-content: center;
+    }
+}

@@ -1,0 +1,39 @@
+@import "./global.css";
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+section {
+    padding: 8px;
+    display: flex;
+    max-width: 90svw;
+    width: 600px;
+    flex-direction: column;
+    gap: 8px;
+}
+
+article {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background-color: var(--bg-2);
+    border-radius: 16px;
+    padding: 1em;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-2);
+    padding: 1em;
+    border-radius: 16px;
+    width: 640px;
+    max-width: 80svw;
+    gap: 24px;
+}
+
