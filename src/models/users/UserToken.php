@@ -13,8 +13,8 @@ class UserToken extends UserTokenHandler {
         $this->userId = $userId;
         $this->hashedAgent = hash("sha256", $_SERVER["HTTP_USER_AGENT"]);
         $this->lastAddress = $_SERVER["REMOTE_ADDR"];
-        $this->createdAt = date(DATE_ATOM);
-        $this->expiresAt = date(DATE_ATOM, strtotime("+30 days"));
+        $this->createdAt = (new DateTime())->format('Y-m-d H:i:s');
+        $this->expiresAt = (new DateTime('+30 days'))->format('Y-m-d H:i:s');
         $this->hashedToken = $this->generateToken();
     }
 
@@ -25,7 +25,7 @@ class UserToken extends UserTokenHandler {
 
     private function setCookie(string $token): string {
         setcookie("keep", $token, [
-            "expires" => $this->expiresAt,
+            "expires" => (new DateTime('+30 days'))->getTimestamp(),
             "path" => "/",
             "httponly" => true,
             "secure" => false, // Enable with https
